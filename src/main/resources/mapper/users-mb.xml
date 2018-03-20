@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <mapper namespace="com.qianfeng.mybatis.userDto">
+     <resultMap id="userDto" type="com.qianfeng.mybatis.dto.UsersDto">
+           <id property="usersId" column="users_id" javaType="java.lang.Integer"/>
+         <result property="usersName" column="users_name" javaType="java.lang.String"/>
+         <result property="usersEmail" column="users_email" javaType="java.lang.String"/>
+         <result property="usersPwd" column="users_pwd" javaType="java.lang.String"/>
+         <result property="usersSale" column="users_sale" javaType="java.lang.String"/>
+  </resultMap>
+    <select id="users" resultMap="userDto">
+
+         SELECT  users_id,users_name,users_email,users_pwd,users_sale FROM users
+
+    </select>
+
+</mapper>
